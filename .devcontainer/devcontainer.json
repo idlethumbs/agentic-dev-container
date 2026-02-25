@@ -54,10 +54,7 @@
   "containerEnv": {
     "NODE_OPTIONS": "--max-old-space-size=4096",
     "CLAUDE_CONFIG_DIR": "/home/node/.claude",
-    "CLAUDE_SP_CONFIG_DIR": "/home/node/.claude-sneakpeek",
-    "POWERLEVEL9K_DISABLE_GITSTATUS": "true",
-    "GOOGLE_CLOUD_LOCATION": "global",
-    "GOOGLE_GENAI_USE_VERTEXAI": "true"
+    "CLAUDE_SP_CONFIG_DIR": "/home/node/.claude-sneakpeek"
   },
   "initializeCommand": "touch .devcontainer/.env",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
