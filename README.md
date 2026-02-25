@@ -1,6 +1,10 @@
 # Dev Container for Agentic Development
 
-A modified version of the [Claude Code dev container](https://docs.anthropic.com/en/docs/claude-code) setup with sensible defaults for agentic AI development. The container runs a strict outbound firewall — all traffic is blocked by default, and only pre-approved domains and services are allowed through.
+A modified version of the [Claude Code dev container]([https://docs.anthropic.com/en/docs/claude-code](https://code.claude.com/docs/en/devcontainer#development-containers)) setup with sensible defaults for agentic AI development. The container runs a strict outbound firewall — all traffic is blocked by default, and only pre-approved domains and services are allowed through.
+
+## Setup
+
+See the [claude docs](https://code.claude.com/docs/en/devcontainer#getting-started-in-4-steps) for information on how to get container started.
 
 ## How it works
 
