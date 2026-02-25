@@ -6,6 +6,18 @@ A modified version of the [Claude Code dev container]([https://docs.anthropic.co
 
 See the [claude docs](https://code.claude.com/docs/en/devcontainer#getting-started-in-4-steps) for information on how to get container started.
 
+## Getting started
+
+The container loads environment variables from `.devcontainer/.env`. This file is gitignored to prevent secrets from being committed. An `initializeCommand` in `devcontainer.json` will create an empty `.env` automatically on first build, so the container works out of the box with no configuration.
+
+To add your own variables, copy the example file and fill in the values you need:
+
+```sh
+cp .devcontainer/.env.example .devcontainer/.env
+```
+
+See `.devcontainer/.env.example` for the available variables. None are required — the container boots fine with an empty `.env`.
+
 ## How it works
 
 On container start, `init-firewall.sh` runs with `NET_ADMIN` / `NET_RAW` capabilities and:
