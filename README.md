@@ -136,6 +136,19 @@ If any domain fails to resolve, the script exits with an error and the container
 | `8000` | Python / Django dev server |
 | `8080` | Common alt HTTP |
 
+## Cloud SQL Proxy
+
+The container ships with [Cloud SQL Proxy](https://cloud.google.com/sql/docs/mysql/sql-proxy) for connecting to Google Cloud SQL instances. It starts automatically on container boot **only** when both of these environment variables are set in `.devcontainer/.env`:
+
+```
+REPO_BACKEND=sql
+INSTANCE_CONNECTION_NAME=your-project:region:instance-name
+```
+
+When active, the proxy listens on `localhost:5432` inside the container. Logs are written to `/tmp/cloud-sql-proxy.log`.
+
+If either variable is missing or `REPO_BACKEND` is not `sql`, the proxy is skipped entirely. The firewall allowlist includes a `/24` range for Cloud SQL IPs in `europe-west1` (`35.233.64.0/24`) plus `sqladmin.googleapis.com` for the admin API. If your instance is in a different region you may need to add its IP range to `init-firewall.sh`.
+
 ## Always blocked
 
 Everything not listed above is blocked. The firewall uses `REJECT` (not `DROP`) so connections fail immediately instead of timing out.
