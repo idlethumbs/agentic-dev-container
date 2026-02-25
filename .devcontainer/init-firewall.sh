@@ -92,8 +92,7 @@ for domain in \
     "sqladmin.googleapis.com" \
     "www.google.com" \
     "google.com" \
-    "www.bing.com" \
-    "stackoverflow.com" \
+"stackoverflow.com" \
     "developer.mozilla.org" \
     "en.wikipedia.org" \
     "wikipedia.org" \
