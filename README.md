@@ -2,6 +2,16 @@
 
 A modified version of the [Claude Code dev container]([https://docs.anthropic.com/en/docs/claude-code](https://code.claude.com/docs/en/devcontainer#development-containers)) setup with sensible defaults for agentic AI development. The container runs a strict outbound firewall — all traffic is blocked by default, and only pre-approved domains and services are allowed through.
 
+## What's included
+
+The container ships with [Claude Code](https://code.claude.com) installed globally. Commented-out lines in the Dockerfile let you add alternative coding agents — just uncomment the ones you want and rebuild:
+
+- [OpenAI Codex CLI](https://github.com/openai/codex) — uses `api.openai.com` (already in the firewall allowlist)
+- [Aider](https://aider.chat) — supports many LLM providers via LiteLLM (major providers already allowed)
+- [Goose by Block](https://github.com/block/goose) — supports 20+ LLM providers (major providers already allowed)
+
+No additional firewall rules are needed — the existing allowlist covers all major LLM provider APIs.
+
 ## Setup
 
 See the [claude docs](https://code.claude.com/docs/en/devcontainer#getting-started-in-4-steps) for information on how to get container started.

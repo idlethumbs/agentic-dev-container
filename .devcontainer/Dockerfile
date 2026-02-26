@@ -85,8 +85,14 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
   -a "export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
   -x
 
-# Install Claude
+# Install Claude Code (enabled by default)
 RUN npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+
+# Uncomment to install alternative coding agents:
+# RUN npm install -g @openai/codex
+# RUN pip install --user aider-chat
+# RUN curl -fsSL https://github.com/block/goose/releases/download/stable/download_cli.sh | CONFIGURE=false bash
+
 RUN echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> ~/.zshrc
 RUN echo '[ -f ~/.zshrc-host ] && source ~/.zshrc-host' >> ~/.zshrc
 
