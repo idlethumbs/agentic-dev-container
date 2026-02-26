@@ -87,7 +87,6 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 
 # Install Claude
 RUN npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
-RUN npx @realmikekelly/claude-sneakpeek quick --name claudesp
 RUN echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> ~/.zshrc
 RUN echo '[ -f ~/.zshrc-host ] && source ~/.zshrc-host' >> ~/.zshrc
 
