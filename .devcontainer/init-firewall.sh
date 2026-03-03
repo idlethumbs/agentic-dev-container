@@ -69,6 +69,7 @@ done < <(echo "$gh_ranges" | jq -r '(.web + .api + .git)[]' | aggregate -q)
 #         system package repos (apt), Docker/container registries,
 #         AI/LLM providers, documentation sites,
 #         deployment platforms, Terraform/IaC,
+#         Figma (MCP + auth),
 #         well-known online MCP servers
 for domain in \
     "registry.npmjs.org" \
@@ -103,6 +104,9 @@ for domain in \
     "api.exa.ai" \
     "api.firecrawl.dev" \
     "api.perplexity.ai" \
+    "figma.com" \
+    "www.figma.com" \
+    "mcp.figma.com" \
     "smithery.ai" \
     "registry.smithery.ai" \
     "mcp.run" \
