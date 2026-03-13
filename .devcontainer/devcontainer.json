@@ -45,7 +45,7 @@
   "mounts": [
   "source=claude-code-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
 
-  "source=claude-config,target=/home/node/.claude,type=volume",
+  "source=claude-config-${devcontainerId},target=/home/node/.claude,type=volume",
 
   "source=${env:HOME}/.config/gcloud,target=/home/node/.config/gcloud,type=bind",
   "source=${localEnv:HOME}/.zshrc,target=/home/node/.zshrc-host,type=bind,readonly"
