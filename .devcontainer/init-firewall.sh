@@ -142,7 +142,19 @@ for domain in \
     "api.railway.app" \
     "fly.io" \
     "registry.terraform.io" \
-    "releases.hashicorp.com"; do
+    "releases.hashicorp.com" \
+    "ai.google.dev" \
+    "discuss.ai.google.dev" \
+    "developers.googleblog.com" \
+    "cloud.google.com" \
+    "docs.cloud.google.com" \
+    "firebase.google.com" \
+    "platform.openai.com" \
+    "docs.anthropic.com" \
+    "docs.aws.amazon.com" \
+    "huggingface.co" \
+    "docs.mistral.ai" \
+    "docs.cohere.com";do
     echo "Resolving $domain..."
     ips=$(dig +noall +answer A "$domain" | awk '$4 == "A" {print $5}')
     if [ -z "$ips" ]; then
